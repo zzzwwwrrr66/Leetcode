@@ -36,3 +36,5 @@ var letterCombinations = function(digits) {
   }
   return result;
 };
+
+letterCombinations('23')
