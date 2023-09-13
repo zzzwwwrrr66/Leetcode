@@ -5,7 +5,7 @@ def maxDepth(root):
     if not root:
         return 0
 
-    q = deque(root)  # 3
+    q = deque([root])  # 3
     depth = 0
 
     while q:
