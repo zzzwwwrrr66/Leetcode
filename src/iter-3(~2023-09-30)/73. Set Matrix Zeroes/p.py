@@ -27,7 +27,6 @@ def setZeroes(matrix: List[List[int]]) -> None:
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
             if matrixCopy[i][j] == 0:
-                print("matrixCopy", matrixCopy)
                 dfs(i, j, [(1, 0), (-1, 0), (0, 1), (0, -1)])  # 위 아래 오른쪽 왼쪽
 
 
