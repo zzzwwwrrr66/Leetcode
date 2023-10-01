@@ -16,3 +16,6 @@ def generate(numRows: int) -> List[List[int]]:
 
 
 generate(5)
+
+# todo: see the another resolve
+# https://leetcode.com/problems/pascals-triangle/solutions/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions
