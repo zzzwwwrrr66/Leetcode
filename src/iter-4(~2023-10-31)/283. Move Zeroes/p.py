@@ -22,4 +22,4 @@ def moveZeroes(nums: List[int]) -> None:
 
 moveZeroes([0, 1, 0, 3, 12])
 
-# https://leetcode.com/problems/move-zeroes/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions
+# https://leetcode.com/problems/move-zeroes/
