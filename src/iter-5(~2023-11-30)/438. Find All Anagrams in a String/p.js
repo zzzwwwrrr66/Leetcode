@@ -21,4 +21,6 @@ loop
  * @param {string} p
  * @return {number[]}
  */
-var findAnagrams = function (s, p) {};
+var findAnagrams = function (s, p) {
+  console.log();
+};
