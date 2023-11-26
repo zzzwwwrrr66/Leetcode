@@ -10,10 +10,12 @@ function recursion(text1, text2, index1, index2, memo) {
 
   const key = index1 + "#" + index2;
 
-  if (memo.has(key)) return memo.get(key);
+  if (memo.has(key)) {
+    return memo.get(key);
+  }
 
   let result;
-
+  // 끝자리수 같은지 확인
   if (text1.charAt(index1) === text2.charAt(index2)) {
     result = recursion(text1, text2, index1 - 1, index2 - 1, memo) + 1;
   } else {

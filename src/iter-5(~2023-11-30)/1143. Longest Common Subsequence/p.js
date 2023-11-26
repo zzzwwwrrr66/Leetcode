@@ -8,6 +8,9 @@ var longestCommonSubsequence = function (text1, text2) {
   const n = text1.length;
   const m = text2.length;
 
+  // base error case
+  if (n < 0 || m || 0) return 0;
+
   const countMap = Array.from(Array(n + 1), () => Array(m + 1).fill(0));
 
   for (let i = 1; i < n + 1; i++) {
