@@ -19,3 +19,10 @@ left join Transactions t
 on v.visit_id = t.visit_id
 where t.transaction_id is null
 group by v.customer_id;
+
+-- 577. Employee Bonus
+select a.name, b.bonus 
+from Employee a
+left join Bonus b
+on a.empId = b.empId 
+where b.bonus < 1000 or b.bonus is null
