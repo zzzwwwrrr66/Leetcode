@@ -6,3 +6,4 @@ order by rating desc;
 
 
 -- 1251. Average Selling Price
+
