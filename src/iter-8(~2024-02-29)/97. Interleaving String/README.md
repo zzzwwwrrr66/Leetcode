@@ -1,0 +1,2 @@
+- strings1 strings2 의 조합으로 strings3 을 제거할수있는지
+- 중복 불가능, strings3의 순서가 바뀐조합 불가능
