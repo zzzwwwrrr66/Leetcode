@@ -7,14 +7,14 @@
 
 class WordDictionary {
   constructor() {
-    this.dic = {};
+    this.root = {};
   }
   /**
    * @param {string} word
    * @return {void}
    */
   addWord(word) {
-    let node = this.dic;
+    let node = this.root;
     for (const currWord of word) {
       if (!node[currWord]) {
         node[currWord] = {};
@@ -29,38 +29,71 @@ class WordDictionary {
    * @return {boolean}
    */
   search(word) {
-    let node = this.dic;
-    for (const key in this.dic) {
-      if (word[0] === "." || word[0] === key) {
-        for (let i = 0; i < word.length; i++) {
-          if (i === 0 && word[i] === ".") {
-            node = node[key];
-            continue;
+    let node = this.root;
+    const path = { isSearched: false };
+    this.searchHelper(word, 0, node, path);
+
+    return path.isSearched;
+  }
+
+  /**
+   *
+   * @param {string} word
+   * @param {number} idx
+   * @param {{}} node
+   * @param {{isSearched: boolean}} path
+   * @returns
+   */
+  searchHelper(word, idx, node, path) {
+    if (!node) return;
+    if (path.isSearched) return;
+
+    const currWord = word[idx];
+
+    // if last index
+    if (word.length - 1 === idx) {
+      if (currWord === ".") {
+        for (const key in node) {
+          let n = node[key];
+          if (n === "isWord") continue;
+          if (n.isWord) {
+            path.isSearched = true;
+            return;
           }
-          if (word[i] === ".") {
-            if (Object.keys(node).length === 1 && node.isWord) {
-              return false;
-            }
-            for (const currKey in node) {
-              if (currKey !== "isWord") {
-                node = node[currKey];
-              }
-            }
-            continue;
-          }
-          node = node[word[i]];
         }
       }
-      if (node && node.isWord) return true;
+
+      if (currWord in node && node[currWord].isSearched) {
+        path.isSearched = true;
+        return;
+      }
+
+      return;
     }
 
-    return false;
+    // else
+    if (currWord === ".") {
+      for (const key in node) {
+        if (key === "isWord") continue;
+        node = node[key];
+        this.searchHelper(word, idx + 1, node, path);
+      }
+    } else {
+      if (!(currWord in node)) return;
+      node = node[currWord];
+      this.searchHelper(word, idx + 1, node, path);
+    }
+    return;
   }
 }
 
 const wordDictionary = new WordDictionary();
-wordDictionary.addWord("a");
-wordDictionary.addWord("a");
+// wordDictionary.addWord("ba");
+wordDictionary.addWord("dad");
+wordDictionary.addWord("mad");
 
-wordDictionary.search("a.");
-// wordDictionary.search("b.d");
+console.log(
+  wordDictionary.search("pad")
+  // wordDictionary.search("bad"),
+  // wordDictionary.search("a")
+);
