@@ -25,6 +25,7 @@ var calcEquation = function (equations, values, queries) {
       graph[b][a] = 1 / values[i];
     }
   }
+  console.log({ graph });
 
   // 2. graph bfs neighbor
   const dfs = (a, b, visited) => {
@@ -79,3 +80,6 @@ calcEquation(
     ["x", "x"],
   ]
 );
+
+
+{ a: { b: 2 }, b: { a: 0.5, c: 3 }, c: { b: 0.3333333333333333 } }
