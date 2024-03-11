@@ -4,12 +4,10 @@
  * @return {boolean}
  */
 var canConstruct = function (ransomNote, magazine) {
-  magazineMap = new Map();
+  const magazineMap = new Map();
 
   for (const v of magazine) {
-    magazineMap.get(v)
-      ? magazineMap.set(v, magazineMap.get(v) + 1)
-      : magazineMap.set(v, 1);
+    magazineMap.get(v) ? magazineMap.set(v, magazineMap.get(v) + 1) : magazineMap.set(v, 1);
   }
 
   let result = true;
