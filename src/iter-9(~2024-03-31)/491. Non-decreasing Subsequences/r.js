@@ -23,4 +23,12 @@ var findSubsequences = function (nums) {
   const result = iterate(0, []);
   return result;
 };
-console.log(letterCasePermutation("a1b2")); // return [("a1b2", "a1B2", "A1b2", "A1B2")];
+
+// findSubsequences([4, 4, 3, 2, 1]);x
+console.log(findSubsequences([4, 6, 7, 7]));
+
+/* 조합(combination)
+// 1. 조건에 맞으면 result에 추가
+// 2. index + 1, 현재까지의 진행temp, result = [] 를 재귀한다
+// 3. return result 
+*/
