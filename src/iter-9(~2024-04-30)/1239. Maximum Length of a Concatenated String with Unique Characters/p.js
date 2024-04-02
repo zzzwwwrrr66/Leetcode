@@ -3,8 +3,6 @@
  * @return {number}
  */
 var maxLength = function (arr) {
-  // 자신 포함 두개까지 가능
-
   // base return case
   if (!Array.isArray(arr) || arr.length === 0) {
     return 0;
