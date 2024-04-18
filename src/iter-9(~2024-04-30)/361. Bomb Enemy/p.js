@@ -15,10 +15,10 @@ var maxKilledEnemies = function (grid) {
     for (let j = 0; j < n; j++) {
       if (grid[i][j] === "0") {
         const eCount = [];
-        dfs(i - 1, j, eCount, "top") ?? 0;
-        dfs(i, j + 1, eCount, "right") ?? 0;
-        dfs(i + 1, j, eCount, "bottom") ?? 0;
-        dfs(i, j - 1, eCount, "left") ?? 0;
+        dfs(i - 1, j, eCount, "top");
+        dfs(i, j + 1, eCount, "right");
+        dfs(i + 1, j, eCount, "bottom");
+        dfs(i, j - 1, eCount, "left");
 
         maxCount = Math.max(maxCount, eCount.length);
       }
