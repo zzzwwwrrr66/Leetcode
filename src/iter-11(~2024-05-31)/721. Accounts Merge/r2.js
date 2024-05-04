@@ -1,9 +1,3 @@
-// 1. key 가 email 인 map 을 만든다 -> parentEmailMap(graph 형식)
-// 2. name map 을 만든다
-// 3. 2loop and parentEmailMap and nameMap 갱신
-// 4. parentEmailMap 의 loop and result 전의 데이터 생성
-// 5. result 가공후 solve return
-
 var accountsMerge = function (accounts) {
   // graph
   const parents = {};
@@ -18,9 +12,9 @@ var accountsMerge = function (accounts) {
     return parents[x];
   };
 
-  const union = (x, y) => {
-    const findEmailKey = find(x);
-    const findEmailParent = find(y);
+  const union = (child, parent) => {
+    const findEmailKey = find(child);
+    const findEmailParent = find(parent);
     parents[findEmailKey] = findEmailParent;
   };
 
@@ -36,7 +30,7 @@ var accountsMerge = function (accounts) {
       union(email, emails[0]);
     }
   }
-
+  console.log({ parents });
   const emails = {};
   for (const email of Object.keys(parents)) {
     const parent = find(email);
@@ -53,8 +47,15 @@ var accountsMerge = function (accounts) {
 };
 
 accountsMerge([
-  ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
-  ["John", "johnsmith@mail.com", "john00@mail.com"],
-  ["Mary", "mary@mail.com"],
-  ["John", "johnnybravo@mail.com"],
+  ["David", "David0@m.co", "David4@m.co", "David3@m.co"],
+  ["David", "David5@m.co", "David5@m.co", "David0@m.co"],
+  ["David", "David1@m.co", "David4@m.co", "David0@m.co"],
+  ["David", "David0@m.co", "David1@m.co", "David3@m.co"],
+  ["David", "David4@m.co", "David1@m.co", "David3@m.co"],
 ]);
+// accountsMerge([
+//   ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
+//   ["John", "johnsmith@mail.com", "john00@mail.com"],
+//   ["Mary", "mary@mail.com"],
+//   ["John", "johnnybravo@mail.com"],
+// ]);
