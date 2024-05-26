@@ -1,11 +1,11 @@
 /**
  * @param {number[][]} matrix
- * 기존의 matrix 를 변경해야함->새로운 matrix return 금지 
- * 행과열을 뒤집는다 -> reverse 한다 
+ * 기존의 matrix 를 변경해야함->새로운 matrix return 금지
+ * 행과열을 뒤집는다 -> reverse 한다
  * j <  i 일때 m[j][i] = m[i][j]
  */
 function RotateMatrix(matrix) {
-  const default = matrix.map(v=>v.map(v=>v))
+  const asd = matrix.map((v) => v.map((v) => v));
   const res = [];
   for (let i = 0; i < matrix.length; i++) {
     const currList = [];
