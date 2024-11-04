@@ -29,3 +29,5 @@ var wordBreak = function (s, wordDict) {
 // 4 에서 leet이 맞았으니 4에서 wordDict를 다시 recursion
 // code 에서 맞았으니 currIndex는 8 이 된다 그러므로 8은 True의 숫자임
 wordBreak("leetcode", ["leet", "code"]);
+
+//
