@@ -13,7 +13,6 @@ var wordBreak = function (s, wordDict) {
   for (let i = n - 1; i >= 0; i--) {
     const currSWord = s[i];
     for (const word of wordDict) {
-      console.log({ word });
       if (dp[i]) {
         break;
       }
