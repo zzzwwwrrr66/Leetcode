@@ -13,7 +13,6 @@ class Solution:
         for i, c in enumerate(s):
             size += 1
             end = max(end, lastIndex[c])
-            ## 나온 숫자들만 res에 입력 할수있다
             if i == end:
                 res.append(size)
                 size = 0
