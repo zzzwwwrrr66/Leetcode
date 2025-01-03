@@ -29,8 +29,6 @@ class Solution:
             if cnt >= k or cost > dist[toNode][cnt + 1]:
                 continue
 
-            dist[toNode][cnt + 1] = cost
-
             for i, v in enumerate(adj[toNode]):
                 cst, target = v
                 nextCost = cst + cost
